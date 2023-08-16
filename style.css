@@ -2,7 +2,7 @@
     font-family: 'HankenGrotesk';
     font-display: swap;
     font-weight: 100 900;
-    src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf) format(truetype);
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
 }
 
 :root {
@@ -108,7 +108,7 @@ body {
     color: var(--clr-neutral-100);
     line-height: 1;
     background: var(--clr-neutral-700);
-    padding: 1rem 1rem;
+    padding: 1rem 2rem;
     border: 0;
     border-radius: 100vw;
     cursor: pointer;
@@ -122,9 +122,9 @@ body {
 .result-summary {
     --padding: 2.5rem;
     --border-radius: 2rem;
+
     max-width: 46rem;
     display: grid;
-
 }
 
 @media (min-width: 600px) {
@@ -137,16 +137,14 @@ body {
     }
 }
 
-.results,
-.summary {
-    padding: var(--padding);
-}
-
 .results {
     color: hsl(var(--clr-neutral-hsl-100), .7);
     text-align: center;
+    padding:
+        var(--padding) calc(var(--padding) * 1.5);
     background: var(--gradient-primary);
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border-radius:
+        0 0 var(--border-radius) var(--border-radius);
 }
 
 @media (min-width: 600px) {
@@ -171,4 +169,57 @@ body {
     font-weight: var(--fw-black);
     line-height: 1;
     color: var(--clr-neutral-100);
+}
+
+.result-rank {
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-700);
+    font-weight: var(--fw-bold);
+}
+
+.summary {
+    padding: var(--padding);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: hsl(var(--item-color), .1);
+}
+
+.summary-item svg {
+    stroke: hsl(var(--item-color));
+}
+
+.summary-item-title {
+    color: hsl(var(--item-color));
+    font-weight: var(--fw-bold);
+}
+
+.summary-item[data-item-type="accent-1"] {
+    --item-color: var(--clr-accent-1);
+}
+
+.summary-item[data-item-type="accent-2"] {
+    --item-color: var(--clr-accent-2);
+}
+
+.summary-item[data-item-type="accent-3"] {
+    --item-color: var(--clr-accent-3);
+}
+
+.summary-item[data-item-type="accent-4"] {
+    --item-color: var(--clr-accent-4);
+}
+
+.summary-score {
+    font-weight: var(--fw-black);
+    color: hsl(var(--clr-neutral-hsl-700), .5);
+}
+
+.summary-score span {
+    color: var(--clr-neutral-700);
 }
